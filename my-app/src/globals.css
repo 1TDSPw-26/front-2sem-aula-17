@@ -5,11 +5,31 @@
         @apply bg-gray-400 border-2 rounded-2xl mx-auto my-auto w-[30%] px-5 py-5;
 
         & button{
-            @apply inline-block m-2 p-2 rounded-[5px]
+            @apply inline-block m-2 p-2 rounded-[5px];
         }
 
         & div :nth-child(2){
             @apply bg-black text-white hover:bg-white hover:text-black;
         }
     }
+
+    .tblProduto{
+        @apply border-2 border-black mx-auto my-auto bg-gray-400 text-amber-50 w-2xl;
+     
+        & th{
+            @apply text-center;
+        }
+     
+        & th, td{
+            @apply p-5 border-1 border-black;
+        }  
+        & td a svg {
+            @apply inline;
+        }
+        & td:first-child{
+            @apply text-center;
+        }
+    }
+
+    
 }
