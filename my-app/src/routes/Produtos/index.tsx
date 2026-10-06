@@ -9,9 +9,9 @@ export default function Produtos() {
     //Recipiente onde irei guardar a lista de produtos
     const [produtos, setProduto] = useState<TipoProduto[]>([]);
 
-    useEffect(() => {
+    useEffect( ()=>{
 
-        const carregarProdutos = async () => {
+        const carregarProdutos = async ()=>{
             try {
                 const resposta = await fetch("http://localhost:3001/produtos");
 
@@ -31,54 +31,13 @@ export default function Produtos() {
 
         carregarProdutos();
 
-    }, []);
-
-    
-
-    const navigate = useNavigate();
-    const modalInfo = useRef<HTMLDialogElement>(null);
-    const [idExclusao, setIdExclusão] = useState<string>("");
-    const abrirModal = (id:string)=>{
-
-        modalInfo.current?.showModal()
-    }
-    const handleDelete = async (id:string)=>{
-        try{
-
-            const response = await fetch('http://localhost:3001/produtos/${idExclusao}',
-                {method: "DELETE"});
-
-                if(!response.ok){
-                    throw new Error('Ocorreu um erro na exclusão do produto: ${response.status} - ${response.statusText}');
-                
-                }
-                
-                alert("Produto excluido com sucesso!");
-                navigate("/produtos");
-
-            
-        }catch (error) {
-                console.error(error);
-            }
-
-    }
+    },[]);
 
     return (
         <main>
 
             <h2>Produtos</h2>
-
-            <dialog className="msgDelete" ref={modalInfo}>
-                <h3>Exclusão de produto</h3>
-                <div>
-                    <p>Deseja realmente excluir esse produto?</p>
-                    <button onClick={()=> modalInfo.current?.close()}>Cancelar</button>
-                    <button onClick={()=> handleDelete} className="bg-red-600">Sim - Excluir </button>
-                </div>
-
-            </dialog>
-
-            <table border={1} style={{ width: "100%", borderCollapse: "collapse", borderColor: "#ff0000" }}>
+            <table border={1} style={{width:"100%", borderCollapse:"collapse"}}>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -91,16 +50,16 @@ export default function Produtos() {
                 <tbody>
                     {produtos.map((p) => (
 
-                        <tr key={p.id}>
-                            <td>{p.id}</td>
-                            <td>{p.nome}</td>
-                            <td>{p.preco}</td>
-                            <td>{p.estoque}</td>
-                            <td>
-                                <Link to={`/CadProduto/${p.id}`}> <Editar /> </Link>  |
-                                <Link to="#" onClick={() => abrirModal(p.id)}> <Excluir /> </Link>  |
-                            </td>
-                        </tr>
+                            <tr key={p.id}>
+                                <td>{p.id}</td>
+                                <td>{p.nome}</td>
+                                <td>{p.preco}</td>
+                                <td>{p.estoque}</td>
+                                <td>
+                                    <Link to={`/editar-produtos/${p.id}`}> <Editar/> </Link>  | 
+                                    <Link to="#" onClick={()=> confirm("Deseja realmente excluir?")}> <Excluir/> </Link>  | 
+                                </td>
+                            </tr>
                     ))}
                 </tbody>
                 <tfoot>
