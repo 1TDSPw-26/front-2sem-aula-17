@@ -1,4 +1,5 @@
 export type TipoProduto = {
+<<<<<<< HEAD
   id: string;
   nome: string;
   preco: number;
@@ -40,3 +41,32 @@ export type TipoUsuarioGit = {
   created_at: string;
   updated_at: string;
 };
+=======
+    id: String;
+    nome: String;
+    preco: number;
+    estoque: number;
+}
+
+export type TipoUsuarioGit = {
+    login: String;
+    id: number;
+    node_id: String;
+    avatar_url: String;
+    gravatar_id: String;
+    url: String;
+    html_url: String;
+    followers_url: String;
+    following_url: String;
+    gists_url: String;
+    starred_url: String;
+    subscriptions_url: String;
+    organizations_url: String;
+    repos_url: String;
+    events_url: String;
+    received_events_url: String;
+    type: String;
+    user_view_type: String;
+    site_admin: boolean;
+}
+>>>>>>> 41fddf075f0dabe3a92e543d28375aeceb21383e
