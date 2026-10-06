@@ -97,8 +97,8 @@ export default function Produtos() {
                                 <td>{p.preco}</td>
                                 <td>{p.estoque}</td>
                                 <td>
-                                    <Link to={`/editar-produtos/${p.id}`}> <Editar/> </Link>  | 
-                                    <Link to="#" onClick={()=> abrirModal(p.id)}> <Excluir/> </Link>  | 
+                                    <Link to={`/editar-produtos/${p.id}`}> <Editar/> </Link>
+                                    <Link to="#" onClick={()=> abrirModal(p.id)}> <Excluir/> </Link>
                                 </td>
                             </tr>
                     ))}
