@@ -2,7 +2,7 @@ import {  useState } from "react";
 import { useNavigate } from "react-router";
 import type { TipoProduto } from "../../types/types";
 
-export default function CadProduto() {
+export default function CadProduto () {
  document.title = "Cadastrar Produtos"
 
   const navigate = useNavigate();
