@@ -80,7 +80,7 @@ export default function Produtos() {
 
             <table className="tblProduto">
                 <thead>
-                    <tr>
+                    <tr> 
                         <th>ID</th>
                         <th>NOME</th>
                         <th>PREÇO</th>
@@ -98,7 +98,7 @@ export default function Produtos() {
                                 <td>{p.estoque}</td>
                                 <td>
                                     <Link to={`/editar-produtos/${p.id}`}> <Editar/> </Link>  | 
-                                    <Link to="#" onClick={()=> abrirModal(p.id)}> <Excluir/> </Link>  | 
+                                    <Link to="#" onClick={()=> abrirModal(p.id)}> <Excluir/> </Link>
                                 </td>
                             </tr>
                     ))}
