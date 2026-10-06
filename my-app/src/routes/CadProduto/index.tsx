@@ -8,27 +8,22 @@ export default function CadProduto() {
   const navigate = useNavigate();
 
   //Recipiente onde irei guardar a lista de produtos
-  const [produto, setProduto] = useState<TipoProduto>({
-    id: "",
-    nome: "",
-    preco: 0,
-    estoque: 0,
-  });
+  const [produto, setProduto] = useState<TipoProduto>({ id: "", nome: "", preco: 0, estoque: 0 });
+
 
   const handleSubmit = async () => {
     try {
+
       const response = await fetch(`http://localhost:3001/produtos/`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(produto),
+        body: JSON.stringify(produto)
       });
 
       if (!response.ok) {
-        throw new Error(
-          `Ocorreu um erro no cadastro do produto: ${response.status} - ${response.statusText}`,
-        );
+        throw new Error(`Ocorreu um erro no cadastro do produto: ${response.status} - ${response.statusText}`)
       }
 
       //SUCESSO

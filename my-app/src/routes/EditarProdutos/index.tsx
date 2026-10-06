@@ -85,9 +85,9 @@ export default function EditarProdutos() {
             <div>
               <button type="button" onClick={handleUpdate}>ATUALIZAR</button>
             </div>
-              </fieldset>
-            </form>
-          </div>
+          </fieldset>
+        </form>
+      </div>
     </main>
   )
 }
