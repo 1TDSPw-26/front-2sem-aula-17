@@ -12,4 +12,25 @@
             @apply bg-black text-white hover:bg-white hover:text-black;
         }
     }
+
+    .tblProduto{
+        @apply border-2 border-black mx-auto my-auto bg-[#5e5c5c] text-white w-2xl;
+
+
+   & th{
+        @apply text-center;
+    }
+    & th, td{
+        @apply border-2 border-black;
+    }
+
+    & td a svg{
+        @apply inline-block;
+    }
+
+    & td:first-child{
+        @apply text-center;
+    }
+}
+
 }

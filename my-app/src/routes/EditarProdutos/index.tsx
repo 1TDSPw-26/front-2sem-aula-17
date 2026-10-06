@@ -7,7 +7,7 @@ export default function EditarProdutos() {
       //const { } = object
       const { id } = useParams<{id: string}>();
 
-      const produto = listaProdutos.find( ( p )=> p.id === Number(id));
+      const [produto, setProduto] = useState<TipoProduto>({ id: "", nome: "", preco: 0, estoque: 0 });
 
   return (
     <main>

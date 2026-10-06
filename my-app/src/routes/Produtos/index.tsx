@@ -57,7 +57,7 @@ export default function Produtos() {
                                 <td>{p.estoque}</td>
                                 <td>
                                     <Link to={`/editar-produtos/${p.id}`}> <Editar/> </Link>  | 
-                                    <Link to="#" onClick={()=> confirm("Deseja realmente excluir?")}> <Excluir/> </Link>  | 
+                                    <Link to="#" onClick={()=> confirm("Deseja realmente excluir?")}> <Excluir/> </Link>
                                 </td>
                             </tr>
                     ))}

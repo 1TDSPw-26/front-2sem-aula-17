@@ -9,7 +9,7 @@ document.title = "Cadastrar produtos"
 
       //Através do destructuring, podemos acessar os dados do objeto e atribuir a variáveis
       //const { } = object
-      const { id } = useParams<{id: string}>();
+      useParams<{ id: string; }>();
 
       const [produto, setProduto] = useState<TipoProduto>({id:"", nome:"", preco:0, estoque:0});
 
