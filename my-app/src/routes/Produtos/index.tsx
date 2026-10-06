@@ -78,7 +78,9 @@ export default function Produtos() {
 
       <table
         border={1}
-        className="tblProduto"
+        className="tblProduto
+        
+        "
       >
         <thead>
           <tr>
@@ -106,7 +108,7 @@ export default function Produtos() {
                   {" "}
                   <Excluir />{" "}
                 </Link>{" "}
-                |
+
               </td>
             </tr>
           ))}
