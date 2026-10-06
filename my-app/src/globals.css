@@ -16,4 +16,28 @@
             @apply bg-red-600 text-white;
         }
     }
-}
+
+    .tblProduto{
+        @apply border-2 border-black mx-auto my-auto bg-gray-400 text-white w-2xl;
+
+        
+        & th{
+            @apply text-center;
+        }
+
+        & th,td {
+            @apply p-5 border-2 border-black;
+        }
+
+        & td a svg {
+            @apply inline-block;
+        }
+        
+        & td:first-child{
+            @apply text-center;
+        }
+
+    }
+
+
+} 

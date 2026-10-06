@@ -1,11 +1,10 @@
-import { useState } from "react";
 
-import type { TipoUsuarioGit } from "../../types/types";
+
 
 export default function Home() {
     document.title = "Home";
 
-    const[usuarios,setUsuarios] = useState<TipoUsuarioGit[]>([]);
+    
 
     return (
         <main>

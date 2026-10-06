@@ -45,16 +45,16 @@ export default function Produtos() {
 
                 </thead>
                 <tbody>
-                    {produtos.map( (p)=>(
+                    {produtos.map( (p,i)=>(
 
-                        <tr key={p.id}>
+                        <tr key={i}>
                             <td>{p.id}</td>
                             <td>{p.nome}</td>
                             <td>{p.preco}</td>
                             <td>{p.estoque}</td>
                             <td>
                                 <Link to={`/editar-produtos/${p.id}`}><Editar /></Link>  | 
-                                <Link to="#" onClick={()=> confirm("Deseja realmente excluir?")}> <Delete/> </Link> |
+                                <Link to="#" onClick={()=> confirm("Deseja realmente excluir?")}> <Delete/> </Link> 
                             </td>
 
                         </tr>
